@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControleDosJogadores : MonoBehaviour
+public class controle2 : MonoBehaviour
 {
     private float vertical;
     Rigidbody2D rigidbody2;
@@ -17,13 +17,8 @@ public class ControleDosJogadores : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vertical = Input.GetAxisRaw("Vertical");
+        vertical = Input.GetAxisRaw("Vertical2");
         rigidbody2.velocity = new Vector2(rigidbody2.velocity.x, vertical * speed);
-        
-    }
 
-   private void MoverJogador1()
-    {
-       
     }
 }
