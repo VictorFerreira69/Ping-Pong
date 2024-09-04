@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 234655791}
   - component: {fileID: 234655790}
   m_Layer: 0
-  m_Name: Teto (2)
+  m_Name: Parede
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 1508857317}
   - component: {fileID: 1508857316}
   m_Layer: 0
-  m_Name: Teto (1)
+  m_Name: Parede
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
