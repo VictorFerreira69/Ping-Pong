@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     private void FinalizarPartida()
     {
-        Debug.Log("Partida finalizada! Vencedor: " + (pontuaçaoDoJogador1 >= 7 ? "Jogador 1" : "Jogador 2"));
+       
         ReiniciarPartida(); 
     }
 }
