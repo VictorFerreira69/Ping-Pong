@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170caa1a26a16504aa72a0789417ac1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDoJogador: 8
+  velocidadeDoJogador: 9
   Jogador1: 0
   yMinimo: -4
   yMaximo: 4
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170caa1a26a16504aa72a0789417ac1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDoJogador: 8
+  velocidadeDoJogador: 9
   Jogador1: 1
   yMinimo: -4
   yMaximo: 4
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 446359cc3684e9a4ba2981b9f19df1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDaBola: 8
+  velocidadeDaBola: 9
   "dire\xE7aoAleatoriaX": 0.5
   "dire\xE7aoAleatoriaY": 0.5
   oRigidbody2: {fileID: 871701834}
