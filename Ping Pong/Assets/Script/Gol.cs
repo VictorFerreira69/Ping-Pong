@@ -21,11 +21,13 @@ public class Gol : MonoBehaviour
     {
         if(golDoJogador1 == true)
         {
-
+            FindObjectOfType<GameManager>().AumentarPontuaçaoDoJogador2();
+            other.gameObject.transform.position = Vector2.zero;
         }
         else
         {
-
+            FindObjectOfType<GameManager>().AumentarPontuaçaoDoJogador1();
+            other.gameObject.transform.position = Vector2.zero;
         }
         
     }

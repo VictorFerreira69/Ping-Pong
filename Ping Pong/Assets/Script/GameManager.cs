@@ -19,12 +19,12 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    void AumnetarPontuaçaoDoJogador1()
+   public  void AumentarPontuaçaoDoJogador1()
     {
-
+        pontuaçaoDoJogador1 += 1;
     }
-    void AumnetarPontuaçaoDoJogador2()
+   public void AumentarPontuaçaoDoJogador2()
     {
-
+        pontuaçaoDoJogador2 += 1;
     }
 }
