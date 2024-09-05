@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170caa1a26a16504aa72a0789417ac1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDoJogador: 7
+  velocidadeDoJogador: 8
   Jogador1: 0
   yMinimo: -4
   yMaximo: 4
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170caa1a26a16504aa72a0789417ac1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDoJogador: 7
+  velocidadeDoJogador: 8
   Jogador1: 1
   yMinimo: -4
   yMaximo: 4

@@ -17,18 +17,20 @@ public class Gol : MonoBehaviour
     {
         
     }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(golDoJogador1 == true)
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        if (golDoJogador1)
         {
-            FindObjectOfType<GameManager>().AumentarPontuaçaoDoJogador2();
-            other.gameObject.transform.position = Vector2.zero;
+            gameManager.AumentarPontuaçaoDoJogador2();
         }
         else
         {
-            FindObjectOfType<GameManager>().AumentarPontuaçaoDoJogador1();
-            other.gameObject.transform.position = Vector2.zero;
+            gameManager.AumentarPontuaçaoDoJogador1();
         }
-        
+
+        other.gameObject.transform.position = Vector2.zero;
     }
 }
