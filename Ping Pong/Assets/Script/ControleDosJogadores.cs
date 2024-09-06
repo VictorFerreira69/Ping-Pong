@@ -6,34 +6,32 @@ using UnityEngine;
 public class ControleDosJogadores : MonoBehaviour
 {
     public float velocidadeDoJogador;
-   
     public bool Jogador1;
-
     public float yMinimo;
-
     public float yMaximo;
 
-    // Start is called before the first frame update
-    void Start()
+    public Vector2 posicaoInicialJogador1;
+    public Vector2 posicaoInicialJogador2; 
+
+    private void Start()
     {
-       
+        
+        ReiniciarPosicao();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-       if(Jogador1 == true)
-       {
+        if (Jogador1)
+        {
             MoverJogador1();
         }
         else
         {
             MoverJogador2();
         }
-        
     }
 
-   private void MoverJogador1()
+    private void MoverJogador1()
     {
         transform.position = new Vector2(transform.position.x, Mathf.Clamp(transform.position.y, yMinimo, yMaximo));
 
@@ -46,8 +44,6 @@ public class ControleDosJogadores : MonoBehaviour
         {
             transform.Translate(Vector2.down * velocidadeDoJogador * Time.deltaTime);
         }
-
-
     }
 
     private void MoverJogador2()
@@ -63,10 +59,18 @@ public class ControleDosJogadores : MonoBehaviour
         {
             transform.Translate(Vector2.down * velocidadeDoJogador * Time.deltaTime);
         }
-
     }
 
-
-
-
+    public void ReiniciarPosicao()
+    {
+        
+        if (Jogador1)
+        {
+            transform.position = posicaoInicialJogador1;
+        }
+        else
+        {
+            transform.position = posicaoInicialJogador2;
+        }
+    }
 }
