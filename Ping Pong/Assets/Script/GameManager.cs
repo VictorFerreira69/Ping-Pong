@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int pontuaçaoDoJogador1;
-    public int pontuaçaoDoJogador2;
+    public static int pontuaçaoDoJogador1;
+    public static int pontuaçaoDoJogador2;
 
     public Text textoDePontuaçao;
     private bool jogoEmpatado;

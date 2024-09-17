@@ -385,8 +385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5405d1fb82c97a74886edbd19963d969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "pontua\xE7aoDoJogador1": 0
-  "pontua\xE7aoDoJogador2": 0
   "textoDePontua\xE7ao": {fileID: 1737856991}
 --- !u!4 &397481297
 Transform:
@@ -885,7 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 446359cc3684e9a4ba2981b9f19df1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDaBola: 9
+  velocidadeDaBola: 15
   oRigidbody2: {fileID: 871701834}
   pontoDeSaqueJogador1: {fileID: 761859013}
   pontoDeSaqueJogador2: {fileID: 183185678}
@@ -903,7 +901,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.7
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
