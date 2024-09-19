@@ -5,15 +5,16 @@ using UnityEngine;
 public class Bola : MonoBehaviour
 {
     public float velocidadeDaBola;
+    public float fatorAumentoVelocidade = 2f;
     public Rigidbody2D oRigidbody2;
 
     public Transform pontoDeSaqueJogador1;
     public Transform pontoDeSaqueJogador2;
 
-    private bool saqueJogador1 = true; 
-    private bool aguardandoSaque = true; 
+    private bool saqueJogador1 = true;
+    private bool aguardandoSaque = true;
 
-    public ControleDosJogadores jogador1; 
+    public ControleDosJogadores jogador1;
     public ControleDosJogadores jogador2;
 
     private void Start()
@@ -23,10 +24,21 @@ public class Bola : MonoBehaviour
 
     private void Update()
     {
-      
         if (aguardandoSaque)
         {
-            oRigidbody2.velocity = Vector2.zero; 
+            oRigidbody2.velocity = Vector2.zero;
+        }
+
+        
+        if (Input.GetKeyDown(KeyCode.R) && !aguardandoSaque && saqueJogador1)
+        {
+            oRigidbody2.velocity = new Vector2(velocidadeDaBola * fatorAumentoVelocidade, 0);
+        }
+
+        
+        if (Input.GetKeyDown(KeyCode.RightControl) && !aguardandoSaque && !saqueJogador1) 
+        {
+            oRigidbody2.velocity = new Vector2(-velocidadeDaBola * fatorAumentoVelocidade, 0);
         }
     }
 
@@ -34,21 +46,19 @@ public class Bola : MonoBehaviour
     {
         if (aguardandoSaque && collisionInfo.gameObject.CompareTag("Player"))
         {
-         
             aguardandoSaque = false;
             MoverBola();
         }
         else if (!aguardandoSaque)
         {
-          
-            if (collisionInfo.gameObject.CompareTag("ParedeEsquerda")) 
+            if (collisionInfo.gameObject.CompareTag("ParedeEsquerda"))
             {
-                saqueJogador1 = false; 
+                saqueJogador1 = false;
                 PosicionarParaSaque();
             }
-            else if (collisionInfo.gameObject.CompareTag("ParedeDireita")) 
+            else if (collisionInfo.gameObject.CompareTag("ParedeDireita"))
             {
-                saqueJogador1 = true; 
+                saqueJogador1 = true;
                 PosicionarParaSaque();
             }
         }
@@ -56,23 +66,20 @@ public class Bola : MonoBehaviour
 
     private void MoverBola()
     {
-       
         if (saqueJogador1)
         {
-            oRigidbody2.velocity = new Vector2(velocidadeDaBola, 0); 
+            oRigidbody2.velocity = new Vector2(velocidadeDaBola, 0);
         }
         else
         {
-            oRigidbody2.velocity = new Vector2(-velocidadeDaBola, 0); 
+            oRigidbody2.velocity = new Vector2(-velocidadeDaBola, 0);
         }
     }
 
     private void PosicionarParaSaque()
     {
-       
         aguardandoSaque = true;
 
-        
         jogador1.ReiniciarPosicao();
         jogador2.ReiniciarPosicao();
 
@@ -85,6 +92,6 @@ public class Bola : MonoBehaviour
             transform.position = pontoDeSaqueJogador2.position;
         }
 
-        oRigidbody2.velocity = Vector2.zero; 
+        oRigidbody2.velocity = Vector2.zero;
     }
 }

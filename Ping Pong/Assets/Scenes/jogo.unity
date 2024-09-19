@@ -536,7 +536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759377770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.45, z: 0}
+  m_LocalPosition: {x: 0, y: 5.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -883,7 +883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 446359cc3684e9a4ba2981b9f19df1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeDaBola: 15
+  velocidadeDaBola: 10
+  fatorAumentoVelocidade: 2
   oRigidbody2: {fileID: 871701834}
   pontoDeSaqueJogador1: {fileID: 761859013}
   pontoDeSaqueJogador2: {fileID: 183185678}
