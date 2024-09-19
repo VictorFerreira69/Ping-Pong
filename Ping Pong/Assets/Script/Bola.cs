@@ -17,6 +17,9 @@ public class Bola : MonoBehaviour
     public ControleDosJogadores jogador1;
     public ControleDosJogadores jogador2;
 
+    private bool jogador1Encostou = false;
+    private bool jogador2Encostou = false;
+
     private void Start()
     {
         PosicionarParaSaque();
@@ -30,13 +33,13 @@ public class Bola : MonoBehaviour
         }
 
         
-        if (Input.GetKeyDown(KeyCode.R) && !aguardandoSaque && saqueJogador1)
+        if (jogador1Encostou && Input.GetKeyDown(KeyCode.R) && !aguardandoSaque && saqueJogador1)
         {
             oRigidbody2.velocity = new Vector2(velocidadeDaBola * fatorAumentoVelocidade, 0);
         }
 
-        
-        if (Input.GetKeyDown(KeyCode.RightControl) && !aguardandoSaque && !saqueJogador1) 
+       
+        if (jogador2Encostou && Input.GetKeyDown(KeyCode.RightControl) && !aguardandoSaque && !saqueJogador1)
         {
             oRigidbody2.velocity = new Vector2(-velocidadeDaBola * fatorAumentoVelocidade, 0);
         }
@@ -44,7 +47,7 @@ public class Bola : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        if (aguardandoSaque && collisionInfo.gameObject.CompareTag("Player"))
+        if (aguardandoSaque && collisionInfo.gameObject.CompareTag("Jogador1"))
         {
             aguardandoSaque = false;
             MoverBola();
@@ -61,6 +64,32 @@ public class Bola : MonoBehaviour
                 saqueJogador1 = true;
                 PosicionarParaSaque();
             }
+
+           
+            if (collisionInfo.gameObject.CompareTag("Jogador1"))
+            {
+                jogador1Encostou = true;
+            }
+
+       
+            if (collisionInfo.gameObject.CompareTag("Jogador2"))
+            {
+                jogador2Encostou = true;
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collisionInfo)
+    {
+
+        if (collisionInfo.gameObject.CompareTag("Jogador1"))
+        {
+            jogador1Encostou = false;
+        }
+
+        if (collisionInfo.gameObject.CompareTag("Jogador2"))
+        {
+            jogador2Encostou = false;
         }
     }
 
